@@ -234,7 +234,52 @@ class BasicDemo {
 			//System.out.println("d1 | d2: " + (d1 | d2));
 	  }
 		
+		static void switchExample() {
+		    System.out.println("\nInside switchExample ...");
+		    int month = 3;
+		    switch (month) {
+			    case 1: System.out.println("January");
+		                break;
+			    case 2: System.out.println("February");
+		                break;
+		        case 3: System.out.println("March");
+		                break;
+			    default: System.out.println("April");
+		    }
+	    }
+	  
+	    static void labeledBreak() {
+		    System.out.println("\nInside labeledBreak ...");
+		    int num = 0;
+			
+		    outermost: for (int i = 0; i < 10; i++) {
+		        for (int j = 0; j < 10; j++) {    
+		            if (i == 5 && j == 5) {
+		                break outermost;
+		            }
+		            num++;
+		        }
+		    }
+			
+		    System.out.println("num: " + num); // prints 55		
+	    }
 		
+		static void labeledContinue() {
+		    System.out.println("\nInside labeledContinue ...");
+		    int num = 0;
+			
+		    outermost: for (int i = 0; i < 10; i++) {
+		        for (int j = 0; j < 10; j++) {    
+		            if (i == 5 && j == 5) {
+		                continue outermost;
+		            }
+		            num++;
+		        }
+		    }
+			
+		    System.out.println("num: " + num); // prints 55		
+	    }
+
 	 	  public static void main(String[] args) {	
 	          // Language Basics 1
 			  //print();				
@@ -263,7 +308,10 @@ class BasicDemo {
 	      charTypePromotion();  
 	 	  comparisonOperators(); 
 	 	  logicalOperators(900);
-	 	  logicalOperators(90);  */
+	 	  logicalOperators(90);  
 	 		  bitwiseOperators();
+	 		  switchExample();
+	 		  */
+	 		 labeledContinue();
 	  }       
 }
